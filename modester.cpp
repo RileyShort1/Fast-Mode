@@ -14,21 +14,22 @@
 
 long find_mode(std::vector<long>& nums) 
 {
-	// max vector size 99999
-	int vec[99999] = { 0 };
+    // max vector size 99999
+    int vec[99999] = { 0 };
 	
-	long currentMax = 0; 
-	long numToReturn = 0;
-	int  s = nums.size();
-	for (int i = 0; i < s; ++i) 
-	{
+    long currentMax = 0; 
+    long numToReturn = 0;
+    int  s = nums.size();
+    for (int i = 0; i < s; ++i) 
+    {
         if (++vec[nums[i]] > currentMax) 
         {
             numToReturn = nums[i];
             currentMax = vec[nums[i]];
         }
-	}
-	return numToReturn;
+    }
+
+    return numToReturn;
 }
 
 /*
